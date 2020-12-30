@@ -102,7 +102,7 @@ L.Control.Measure = L.Control.extend({
       L.DomEvent.on($toggle, 'focus', this._expand, this);
     }
     L.DomEvent.on($start, 'click', L.DomEvent.stop);
-    L.DomEvent.on($start, 'click', this._startMeasure, this);
+    L.DomEvent.on('initarea', 'click', this._startMeasure, this);
     L.DomEvent.on($cancel, 'click', L.DomEvent.stop);
     L.DomEvent.on($cancel, 'click', this._finishMeasure, this);
     L.DomEvent.on($finish, 'click', L.DomEvent.stop);
