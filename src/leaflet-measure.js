@@ -92,7 +92,7 @@ L.Control.Measure = L.Control.extend({
     this._updateMeasureNotStarted();
 
     if (!L.Browser.android) {
-      L.DomEvent.on(container, 'mouseenter', this._expand, this);
+      L.DomEvent.on(container, 'click', this._startMeasure, this);
       L.DomEvent.on(container, 'mouseleave', this._collapse, this);
     }
     L.DomEvent.on($toggle, 'click', L.DomEvent.stop);
@@ -102,7 +102,7 @@ L.Control.Measure = L.Control.extend({
       L.DomEvent.on($toggle, 'focus', this._expand, this);
     }
     L.DomEvent.on($start, 'click', L.DomEvent.stop);
-    L.DomEvent.on('initarea', 'click', this._startMeasure, this);
+    L.DomEvent.on($start, 'click', this._startMeasure, this);
     L.DomEvent.on($cancel, 'click', L.DomEvent.stop);
     L.DomEvent.on($cancel, 'click', this._finishMeasure, this);
     L.DomEvent.on($finish, 'click', L.DomEvent.stop);
