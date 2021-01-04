@@ -92,12 +92,12 @@ L.Control.Measure = L.Control.extend({
     this._updateMeasureNotStarted();
 
     if (!L.Browser.android) {
-      L.DomEvent.on(container, 'click', this._startMeasure, this);
+      L.DomEvent.on(container, 'mouseenter', this._startMeasure, this);
       L.DomEvent.on(container, 'mouseleave', this._collapse, this);
     }
     L.DomEvent.on($toggle, 'click', L.DomEvent.stop);
     if (L.Browser.touch) {
-      L.DomEvent.on($toggle, 'click', this._expand, this);
+      L.DomEvent.on($toggle, 'click', this._startMeasure, this);
     } else {
       L.DomEvent.on($toggle, 'focus', this._expand, this);
     }
